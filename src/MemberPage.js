@@ -1,26 +1,26 @@
 import { Suspense } from "react";
-import Albums from "./Albums.js";
-import Biography from "./Biography.js";
+import Teams from "./Teams.js";
+import MemberDetail from "./MemberDetail.js";
 
 function Panel({ children }) {
 	return <section className="panel">{children}</section>;
 }
 
-export default function ArtistPage({ artist }) {
+export default function MemberPage({ member }) {
 	return (
 		<>
-			<h1>{artist.name}</h1>
-			<Biography artistId={artist.id} />
-			<Suspense fallback={<AlbumsGlimmer />}>
+			<h1>{member.name}</h1>
+			<MemberDetail memberID={member.id} />
+			<Suspense fallback={<MemberGlimmer />}>
 				<Panel>
-					<Albums artistId={artist.id} />
+					<Teams memberID={member.id} />
 				</Panel>
 			</Suspense>
 		</>
 	);
 }
 
-function AlbumsGlimmer() {
+function MemberGlimmer() {
 	return (
 		<div className="glimmer-panel">
 			<div className="glimmer-line" />

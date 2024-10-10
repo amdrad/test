@@ -1,5 +1,5 @@
 import { Suspense, useState } from "react";
-import ArtistPage from "../ArtistPage.js";
+import MemberPage from "../MemberPage.js";
 
 export default function SuspenseFallback() {
 	const [page, setPage] = useState("/");
@@ -8,8 +8,8 @@ export default function SuspenseFallback() {
 		page === "/" ? (
 			<IndexPage navigate={navigate} />
 		) : (
-			<ArtistPage
-				artist={{
+			<MemberPage
+				member={{
 					id: "Dev-Team",
 					name: "Dev Team",
 				}}

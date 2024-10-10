@@ -9,29 +9,29 @@ export function fetchData(url) {
 
 async function getData(url) {
 	if (url === "/Dev-Team/albums") {
-		return await getAlbums();
+		return await getTeams();
 	} else if (url === "/DevSHACK/albums") {
-		const albums = await getAlbums();
+		const albums = await getTeams();
 		return albums.reverse();
 	} else if (url === "/Dev-Team/bio") {
-		return await getBio(
+		return await getMemberDetail(
 			"The DevSHACK created as the development team of X1 company"
 		);
 	} else if (url === "/DevSHACK/bio") {
-		return await getBio("This is the another version of DevSHACK");
+		return await getMemberDetail("This is the another version of DevSHACK");
 	} else {
 		throw Error("Not implemented");
 	}
 }
 
-async function getBio(text) {
+async function getMemberDetail(text) {
 	await new Promise((resolve) => {
 		setTimeout(resolve, 500);
 	});
 	return text;
 }
 
-async function getAlbums() {
+async function getTeams() {
 	await new Promise((resolve) => {
 		setTimeout(resolve, 3000);
 	});

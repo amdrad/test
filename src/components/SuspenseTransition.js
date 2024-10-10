@@ -1,5 +1,5 @@
 import { Suspense, useState, useTransition } from "react";
-import ArtistPage from "../ArtistPage.js";
+import MemberPage from "../MemberPage.js";
 
 export default function SuspenseTransition() {
 	const [page, setPage] = useState("/");
@@ -15,9 +15,9 @@ export default function SuspenseTransition() {
 		page === "/" ? (
 			<IndexPage navigate={navigate} />
 		) : (
-			<ArtistPage
+			<MemberPage
 				key={"suspenseTransition"}
-				artist={{ id: "DevSHACK", name: "DevSHACK" }}
+				member={{ id: "DevSHACK", name: "DevSHACK" }}
 			/>
 		);
 

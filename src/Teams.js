@@ -1,12 +1,12 @@
 import { fetchData } from "./data.js";
 
-export default function Albums({ artistId }) {
-	const albums = use(fetchData(`/${artistId}/albums`));
+export default function Teams({ memberID }) {
+	const teams = use(fetchData(`/${memberID}/albums`));
 	return (
 		<ul>
-			{albums.map((album) => (
-				<li key={album.id}>
-					{album.title} ({album.year})
+			{teams.map((team) => (
+				<li key={team.id}>
+					{team.title} ({team.year})
 				</li>
 			))}
 		</ul>
