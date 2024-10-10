@@ -1,5 +1,6 @@
 import { fetchData } from './data.js';
 
+
 // Note: this component is written using an experimental API
 // that's not yet available in stable versions of React.
 
@@ -18,6 +19,9 @@ export default function Albums({ artistId }) {
     </ul>
   );
 }
+
+
+
 
 // This is a workaround for a bug to get the demo running.
 // TODO: replace with real implementation when the bug is fixed.

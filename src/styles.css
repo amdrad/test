@@ -55,8 +55,19 @@ main {
   border: 1px solid black;
 }
 
+.layout2 {
+  border: 1px solid rgb(8, 2, 56);
+}
+
 .header {
   background: #222;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.header2 {
+  background: rgb(8, 2, 56);
   padding: 10px;
   text-align: center;
   color: white;

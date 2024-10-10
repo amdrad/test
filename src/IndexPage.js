@@ -1,7 +1,10 @@
 export default function IndexPage({ navigate }) {
   return (
     <button onClick={() => navigate('/the-beatles')}>
-      Open The Beatles artist page
+      Click to See Our Members!
     </button>
+
   );
 }
+
+

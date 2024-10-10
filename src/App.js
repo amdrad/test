@@ -3,6 +3,7 @@ import IndexPage from './IndexPage.js';
 import ArtistPage from './ArtistPage.js';
 import Layout from './Layout.js';
 
+
 export default function App() {
   return (
     <Suspense fallback={<BigSpinner />}>
@@ -19,6 +20,7 @@ function Router() {
     startTransition(() => {
       setPage(url);
     });
+
   }
 
   let content;
@@ -30,8 +32,8 @@ function Router() {
     content = (
       <ArtistPage
         artist={{
-          id: 'the-beatles',
-          name: 'The Beatles',
+          id: 'Dev-Team',
+          name: 'Dev Team',
         }}
       />
     );
@@ -41,6 +43,8 @@ function Router() {
       {content}
     </Layout>
   );
+
+
 }
 
 function BigSpinner() {

@@ -3,6 +3,7 @@ import Albums from './Albums.js';
 import Biography from './Biography.js';
 import Panel from './Panel.js';
 
+
 export default function ArtistPage({ artist }) {
   return (
     <>
@@ -24,5 +25,6 @@ function AlbumsGlimmer() {
       <div className="glimmer-line" />
       <div className="glimmer-line" />
     </div>
+    
   );
 }

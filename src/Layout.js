@@ -4,7 +4,7 @@ export default function Layout({ children, isPending }) {
       <section className="header" style={{
         opacity: isPending ? 0.7 : 1
       }}>
-        Music Browser
+        DevSHACK
       </section>
       <main>
         {children}

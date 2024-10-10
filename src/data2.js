@@ -4,36 +4,33 @@
 
 let cache = new Map();
 
-export function fetchData(url) {
+export function fetchData1(url) {
   if (!cache.has(url)) {
-    cache.set(url, getData(url));
+    cache.set(url, getData1(url));
   }
   return cache.get(url);
 }
 
-async function getData(url) {
-  if (url === '/Dev-Team/albums') {
-    return await getAlbums();
-  } else if (url === '/Dev-Team/bio') {
-    return await getBio();
+async function getData1(url) {
+  if (url === '/Dev/anothers') {
+    return await getAnother();
+  } else if (url === '/Dev/bio') {
+    return await getBio1();
   } else {
     throw Error('Not implemented');
   }
 }
 
-
-
-
-async function getBio() {
+async function getBio1() {
   // Add a fake delay to make waiting noticeable.
   await new Promise(resolve => {
-    setTimeout(resolve, 500);
+    setTimeout(resolve, 1000);
   });
 
-  return `The DevSHACK created as the development team of X1 company`;
+  return `This is another version of DevSHACK`;
 }
 
-async function getAlbums() {
+async function getAnother() {
   // Add a fake delay to make waiting noticeable.
   await new Promise(resolve => {
     setTimeout(resolve, 3000);
@@ -66,4 +63,3 @@ async function getAlbums() {
    
   }];
 }
-

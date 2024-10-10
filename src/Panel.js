@@ -3,5 +3,8 @@ export default function Panel({ children }) {
     <section className="panel">
       {children}
     </section>
+
+    
   );
 }
+
