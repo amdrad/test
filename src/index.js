@@ -3,16 +3,10 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 
 import App from "./App";
-import NotApp from "./anotherApp";
-
 
 const root = createRoot(document.getElementById("root"));
 root.render(
-  <StrictMode>
-    
-    <App />
-    <NotApp/>
-
-  </StrictMode>
-  
+	<StrictMode>
+		<App />
+	</StrictMode>
 );
