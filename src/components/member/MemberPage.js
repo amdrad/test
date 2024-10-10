@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Teams from "./Teams.js";
+import Teams from "../Teams.js";
 import MemberDetail from "./MemberDetail.js";
 
 function Panel({ children }) {

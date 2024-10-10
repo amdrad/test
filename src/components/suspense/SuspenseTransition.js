@@ -1,5 +1,8 @@
 import { Suspense, useState, useTransition } from "react";
-import MemberPage from "../MemberPage.js";
+
+import MemberPage from "../member/MemberPage.js";
+import ButtonNavigate from "../shared/button.js";
+import Spinner from "../shared/spinner.js";
 
 export default function SuspenseTransition() {
 	const [page, setPage] = useState("/");
@@ -13,7 +16,11 @@ export default function SuspenseTransition() {
 
 	const content =
 		page === "/" ? (
-			<IndexPage navigate={navigate} />
+			<ButtonNavigate
+				text="Click to See Our Members!"
+				onClick={() => navigate("/DevSHACK")}
+				variant="danger"
+			/>
 		) : (
 			<MemberPage
 				key={"suspenseTransition"}
@@ -22,22 +29,10 @@ export default function SuspenseTransition() {
 		);
 
 	return (
-		<Suspense fallback={<BigSpinner />}>
+		<Suspense fallback={<Spinner />}>
 			<Layout isPending={isPending}>{content}</Layout>
 		</Suspense>
 	);
-}
-
-function IndexPage({ navigate }) {
-	return (
-		<button onClick={() => navigate("/the-beatles")}>
-			Click to See Our Members!
-		</button>
-	);
-}
-
-function BigSpinner() {
-	return <h2>🌀 Loading...</h2>;
 }
 
 function Layout({ children, isPending }) {

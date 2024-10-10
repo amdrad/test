@@ -1,18 +1,16 @@
-import { fetchData } from "./data.js";
+import { fetchData } from "../../data.js";
 
-export default function Teams({ memberID }) {
-	const teams = use(fetchData(`/${memberID}/teams`));
+export default function MemberDetail({ memberID }) {
+	const detail = use(fetchData(`/${memberID}/memberDetail`));
 	return (
-		<ul>
-			{teams.map((team) => (
-				<li key={team.id}>
-					{team.title} ({team.year})
-				</li>
-			))}
-		</ul>
+		<section>
+			<p className="bio">{detail}</p>
+		</section>
 	);
 }
 
+// This is a workaround for a bug to get the demo running.
+// TODO: replace with real implementation when the bug is fixed.
 function use(promise) {
 	if (promise.status === "fulfilled") {
 		return promise.value;

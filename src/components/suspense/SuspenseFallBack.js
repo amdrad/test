@@ -1,12 +1,17 @@
 import { Suspense, useState } from "react";
-import MemberPage from "../MemberPage.js";
+import MemberPage from "../member/MemberPage.js";
+import ButtonNavigate from "../shared/button.js";
+import BigSpinner from "../shared/spinner.js";
 
 export default function SuspenseFallback() {
 	const [page, setPage] = useState("/");
 
 	const content =
 		page === "/" ? (
-			<IndexPage navigate={navigate} />
+			<ButtonNavigate
+				text="Click to See Us!"
+				onClick={() => navigate("/Dev")}
+			/>
 		) : (
 			<MemberPage
 				member={{
@@ -25,14 +30,6 @@ export default function SuspenseFallback() {
 			<Layout>{content}</Layout>
 		</Suspense>
 	);
-}
-
-function IndexPage({ navigate }) {
-	return <button onClick={() => navigate("/Dev")}>Click to See Us!</button>;
-}
-
-function BigSpinner() {
-	return <h2>🌀 Loading...</h2>;
 }
 
 function Layout({ children }) {
