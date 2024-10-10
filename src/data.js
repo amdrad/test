@@ -8,16 +8,16 @@ export function fetchData(url) {
 }
 
 async function getData(url) {
-	if (url === "/Dev-Team/albums") {
+	if (url === "/Dev-Team/teams") {
 		return await getTeams();
-	} else if (url === "/DevSHACK/albums") {
-		const albums = await getTeams();
-		return albums.reverse();
-	} else if (url === "/Dev-Team/bio") {
+	} else if (url === "/DevSHACK/teams") {
+		const teams = await getTeams();
+		return teams.reverse();
+	} else if (url === "/Dev-Team/memberDetail") {
 		return await getMemberDetail(
 			"The DevSHACK created as the development team of X1 company"
 		);
-	} else if (url === "/DevSHACK/bio") {
+	} else if (url === "/DevSHACK/memberDetail") {
 		return await getMemberDetail("This is the another version of DevSHACK");
 	} else {
 		throw Error("Not implemented");

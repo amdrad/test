@@ -1,7 +1,7 @@
 import { fetchData } from "./data.js";
 
 export default function MemberDetail({ memberID }) {
-	const detail = use(fetchData(`/${memberID}/bio`));
+	const detail = use(fetchData(`/${memberID}/memberDetail`));
 	return (
 		<section>
 			<p className="bio">{detail}</p>

@@ -1,7 +1,7 @@
 import { fetchData } from "./data.js";
 
 export default function Teams({ memberID }) {
-	const teams = use(fetchData(`/${memberID}/albums`));
+	const teams = use(fetchData(`/${memberID}/teams`));
 	return (
 		<ul>
 			{teams.map((team) => (
